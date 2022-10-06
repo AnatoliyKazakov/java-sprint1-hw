@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         StepTracker stepTracker = new StepTracker();
+        Converter converter = new Converter(75, 50, 1000);
         printMenu();
         int userInput = scanner.nextInt();
 
@@ -44,6 +45,15 @@ public class Main {
                 System.out.println("Введите месяц:");
                 int month = scanner.nextInt();
                 stepTracker.printStatSteps(month);
+                stepTracker.printSumSteps(month);
+                stepTracker.printSeriaSteps(month);
+                System.out.println("Количество пройденных шагов по дням:");
+                System.out.println(stepTracker.result);
+                System.out.println("В этом месяце вы прошли: " + stepTracker.stepsSum + " шагов.");
+                System.out.println("Максимальное пройденное количество шагов в месяце: " + stepTracker.stepsMax + " шагов.");
+                System.out.println("Среднее количество шагов в день: " + stepTracker.averSteps + ".");
+                converter.convert(stepTracker.stepsSum);
+                System.out.println("Лучшая серия: " + stepTracker.seria + " дней подряд выполнили цель дня!");
             } else if (userInput == 3) {
                 System.out.println("Введите новый план шагов в день:");
                 int newPlan = scanner.nextInt();

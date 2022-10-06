@@ -9,7 +9,7 @@ public class Converter {
         kilocalorie = kkal;
     }
     void convert(int step){
-        System.out.println("Вы прошли: " + (step*distance)/10000 + "км.");
+        System.out.println("Вы прошли: " + (step*distance)/100000 + "км.");
         System.out.println("Вы сожгли: "+ (step*calories)/kilocalorie + " килокалорий.");
     }
 }
